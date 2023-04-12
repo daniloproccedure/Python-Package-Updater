@@ -39,7 +39,7 @@ def update_packages():
 
     # Print a final message indicating the status of the update process
     if progress_bar.n == len(installed_packages):
-        print("All packages were successfully updated.")
+        print(Finish!")
     else:
         print(f"Update process completed with {progress_bar.n} packages updated and {len(installed_packages) - progress_bar.n} errors.")
 print("Wait the progress bar")
