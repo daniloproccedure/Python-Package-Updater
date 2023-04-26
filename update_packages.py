@@ -21,7 +21,7 @@ def update_packages():
     installed_packages = [line.split('==')[0] for line in pip_freeze_output.split('\n') if line.strip()]
 
     # Display a progress bar for the update process
-    with tqdm(total=len(installed_packages), desc='loading', bar_format='{bar}', ascii=' ▋', colour='green') as progress_bar:
+    with tqdm(total=len(installed_packages), desc='loading', bar_format='Wait the progress bar {bar}', ascii=' ▋', colour='green') as progress_bar:
         for package_name in installed_packages:
             try:
                 # Upgrade the package and capture any error output
@@ -42,5 +42,4 @@ def update_packages():
         print("All packages were successfully updated.")
     else:
         print(f"Update process completed with {progress_bar.n} packages updated and {len(installed_packages) - progress_bar.n} errors.")
-print("Wait the progress bar")
 update_packages()
